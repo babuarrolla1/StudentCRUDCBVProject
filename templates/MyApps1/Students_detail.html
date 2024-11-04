@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% extends 'MyApps1/base.html'%}
+{%block body_block%}
+    <div>
+        <h1>Student-Details!!!</h1>
+        <hr />
+        <ul>
+            <li>ROLL-No : {{students.rollno}}</li>
+            <li>NAME : {{students.name|title}}</li>
+            <li>DEPT : {{students.dept}}</li>
+            <li>MARKS : {{students.marks}}</li>
+        </ul>
+        <a href="/home">Click to Go-Back</a>
+    </div>
+{%endblock%}

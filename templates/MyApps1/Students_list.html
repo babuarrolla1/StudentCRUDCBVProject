@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends 'MyApps1/base.html' %}
+{%block body_block  %}
+    <h1>student-information-list</h1>
+    <table border="2">
+        <thead>
+        <th>rollno</th>
+        <th>name</th>
+        <th>dept</th>
+        <th>marks</th>
+        <th colspan="3">operations</th>
+        </thead>
+        {% for Students in students_list %}
+            <tr>
+                <td>{{Students.rollno }}</td>
+                <td>{{Students.name|title }}</td>
+                <td>{{Students.dept }}</td>
+                <td>{{Students.marks}}</td>
+                <td><a href="/detail/{{ Students.id}}">Details</a></td>
+                <td><a href="/update/{{ Students.id}}">Update</a></td>
+                <td><a href="/delete/{{ Students.id}}">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br/><br/><br/>
+    <a href="/create">Insert New-STUDENT-Record HERE</a>
+{% endblock %}
